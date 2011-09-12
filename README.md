@@ -1,6 +1,10 @@
+I'm Ron Burgundy?
+=================
+
+
 Using
 -----
-
+<pre>
 $ irb
 ree-1.8.7-2010.02 > require 'rubygems'
  => true 
@@ -23,3 +27,4 @@ ree-1.8.7-2010.02 ?>  end
  => nil 
 ree-1.8.7-2010.02 > Person.new.im_ron_burgundy?
  => true 
+</pre>
