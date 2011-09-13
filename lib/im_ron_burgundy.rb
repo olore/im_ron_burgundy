@@ -17,23 +17,19 @@ module ImRonBurgundy
     private
 
     def check(name)
-      return true if name.match /Ron(ald|nie){0,1} Burgundy/i
-      return false
+      name.match /Ron(ald|nie){0,1} Burgundy/i
     end
 
     def check_name
-      return true if self.respond_to?(:name) && check(self.name)
-      return false
+      self.respond_to?(:name) && check(self.name)
     end
 
     def check_class(name)
-      return true if CLASS_NAMES.include?(name.to_s)
-      return false
+      CLASS_NAMES.include?(name.to_s)
     end
 
     def check_signature_quote
-      return true if self.respond_to?(:signature_quote) && self.signature_quote == "You stay classy, San Diego!"
-      return false
+      self.respond_to?(:signature_quote) && self.signature_quote == "You stay classy, San Diego!"
     end
 
   end
@@ -44,17 +40,16 @@ module ImRonBurgundy
     end
 
     def check_string(name)
-      return true if name.match /Ron(ald|nie){0,1} Burgundy/i
-      return false
+      name.match /Ron(ald|nie){0,1} Burgundy/i
     end
 
     def check_class(name)
-      return true if CLASS_NAMES.include?(self.name)
-      return false
+      CLASS_NAMES.include?(self.name)
     end
   end
 
   CLASS_NAMES = ["RonBurgundy", "RonaldBurgundy", "RonnieBurgundy"]
+
 end
 
 class Object
