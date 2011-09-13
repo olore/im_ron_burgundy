@@ -54,16 +54,16 @@ class ObjectTest < Test::Unit::TestCase
     assert RonnieBurgundy.new.im_ron_burgundy?
 
     assert_raise NoMethodError do
-      RonnieBurgundy.new.check("foo")
-    end
-    assert_raise NoMethodError do
-      RonnieBurgundy.new.check_name
+      RonnieBurgundy.new.check_string("foo")
     end
     assert_raise NoMethodError do
       RonnieBurgundy.new.check_class("foo")
     end
     assert_raise NoMethodError do
-      RonnieBurgundy.new.check_signature_quote("foo")
+      RonnieBurgundy.new.has_name?
+    end
+    assert_raise NoMethodError do
+      RonnieBurgundy.new.has_signature_quote?
     end
   end
 
