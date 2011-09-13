@@ -38,4 +38,33 @@ class ObjectTest < Test::Unit::TestCase
     Object.const_set("SomeOtherClass", dummy_class)
     assert SomeOtherClass.new.im_ron_burgundy?
   end
+
+  def test_private_class_methods
+    assert_raise NoMethodError do
+      Object.check_class("foo")
+    end
+    assert_raise NoMethodError do
+      Object.check_string("foo")
+    end
+  end
+
+  def test_private_instance_methods
+    dummy_class = Class.new
+    Object.const_set("RonnieBurgundy", dummy_class)
+    assert RonnieBurgundy.new.im_ron_burgundy?
+
+    assert_raise NoMethodError do
+      RonnieBurgundy.new.check("foo")
+    end
+    assert_raise NoMethodError do
+      RonnieBurgundy.new.check_name
+    end
+    assert_raise NoMethodError do
+      RonnieBurgundy.new.check_class("foo")
+    end
+    assert_raise NoMethodError do
+      RonnieBurgundy.new.check_signature_quote("foo")
+    end
+  end
+
 end

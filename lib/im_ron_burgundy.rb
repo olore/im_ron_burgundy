@@ -3,12 +3,18 @@ module ImRonBurgundy
   def self.included(base)
     base.send :include, InstanceMethods
     base.send :extend, ClassMethods
+
+    #make stuff private
+    base.send :private_class_method, :check_class
+    base.send :private_class_method, :check_string
   end
 
   module InstanceMethods
     def im_ron_burgundy?
       check(self.to_s)  || check_name || check_class(self.class) || check_signature_quote
     end
+
+    private
 
     def check(name)
       return true if name.match /Ron(ald|nie){0,1} Burgundy/i
