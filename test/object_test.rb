@@ -13,6 +13,12 @@ class ObjectTest < Test::Unit::TestCase
     assert RonBurgundy.im_ron_burgundy?
   end
 
+  def test_ron_burgundy_class_instance_IS_ron_burgundy
+    dummy_class = Class.new
+    Object.const_set("RonaldBurgundy", dummy_class)
+    assert RonaldBurgundy.new.im_ron_burgundy?
+  end
+
   def test_object_is_ron_burgundy_if_name_is_ron_burgundy
     dummy_class = Class.new {
       def name

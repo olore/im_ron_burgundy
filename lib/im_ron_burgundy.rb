@@ -7,7 +7,7 @@ module ImRonBurgundy
 
   module InstanceMethods
     def im_ron_burgundy?
-      check(self.to_s)  || check_name || check_signature_quote
+      check(self.to_s)  || check_name || check_class(self.class) || check_signature_quote
     end
 
     def check(name)
@@ -17,6 +17,11 @@ module ImRonBurgundy
 
     def check_name
       return true if self.respond_to?(:name) && check(self.name)
+      return false
+    end
+
+    def check_class(name)
+      return true if CLASS_NAMES.include?(name.to_s)
       return false
     end
 
