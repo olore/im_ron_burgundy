@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Brian Olore"]
   s.email       = ["brian@olore.net"]
-  s.homepage    = "http://rubygems.org/gems/im_ron_burgundy"
+  s.homepage    = "http://github.com/olore/im_ron_burgundy"
   s.summary     = 'Determine if an object is Ron Burgundy or not.'
   s.description = %q{Is the object you're working on Ron Burgundy?}
 
