@@ -14,7 +14,7 @@ module ImRonBurgundy
     private
 
     def check_string(name)
-      name.match /Ron(ald|nie){0,1} Burgundy/i
+      name.match(/Ron(ald|nie){0,1} Burgundy/i) != nil
     end
 
     def has_name?
